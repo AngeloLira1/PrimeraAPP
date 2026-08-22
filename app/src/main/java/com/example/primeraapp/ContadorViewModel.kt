@@ -8,7 +8,7 @@ class ContadorViewModel: ViewModel(){
     //1.PRIVADA: El ViewModel puede cambiar el valor (Mutable)
     private val _numero= MutableLiveData(0)
 
-    //2.PUBLICA: La Activity SOLO puede observar(Live Data), no puede modificar
+    //2.PUBLICA: La Activity SOLO puede observar(Live Data), no puede modiificar
     val numero: LiveData<Int>get()=_numero
 
     fun incrementar() {
@@ -22,7 +22,6 @@ class ContadorViewModel: ViewModel(){
         val actual=_numero.value?:0
         if(actual>0)_numero.value=actual-1
     }
-
     fun reset(){
         _numero.value = 0
     }
